@@ -33,7 +33,7 @@ export default function RolePage({ params }: { params: { slug: string } }) {
           <p className="mt-12 text-sm font-black uppercase tracking-[.18em] text-cyan-300">Role Profile</p>
           <h1 className="mt-5 text-6xl font-black">{roleName}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-300">
-            Vai trò này mô tả một năng lực cụ thể trong AI Company: nhiệm vụ, kết quả tạo ra, workflow phía sau và nhân sự AI đang đảm nhiệm.
+            Vai trò này cho doanh nghiệp biết AI Employee sẽ làm công việc gì, tạo ra kết quả nào và phù hợp với nhu cầu vận hành nào.
           </p>
         </div>
       </section>

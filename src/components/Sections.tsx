@@ -18,14 +18,14 @@ export function DemoSalesMachine() {
       <div className="section-container relative">
         <div className="grid gap-12 lg:grid-cols-[.92fr_1.08fr] lg:items-center">
           <div>
-            <span className="badge">Featured Demo / Flagship Solution</span>
-            <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.04em] text-dark md:text-6xl">AI Sales Bất Động Sản: xem hệ thống làm việc thật.</h2>
+            <span className="badge">Demo AI Sales BĐS / Xem hệ thống vận hành thực tế</span>
+            <h2 className="mt-5 max-w-3xl text-4xl font-black tracking-[-0.04em] text-dark md:text-6xl">AI Sales BĐS xử lý khách hàng từ cuộc gọi đến CRM như thế nào?</h2>
             <p className="mt-6 text-lg leading-8 text-muted">
-              Trải nghiệm đầy đủ quy trình AI Sales Automation: tiếp nhận cuộc gọi, tư vấn nhu cầu, ghi transcript, tạo CRM, phân loại lead nóng và giao việc cho đội sales. Mô hình này có thể chuyển đổi linh hoạt sang spa, nha khoa, giáo dục, bảo hiểm, tuyển sinh hoặc nhiều ngành dịch vụ khác.
+              Doanh nghiệp sẽ thấy toàn bộ quy trình: khách gọi vào, Quế Anh tư vấn, Trâm Anh ghi transcript, Hà Anh cập nhật CRM, Vân Anh đưa dữ liệu lên dashboard và đội sales nhận task chăm sóc tiếp.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href="/case-studies/ai-sales-bat-dong-san" className="inline-flex items-center justify-center gap-2 rounded-full bg-dark px-7 py-4 font-black text-white hover:bg-primary">Xem Demo AI Sales BĐS <ArrowRight size={18}/></Link>
-              <Link href="/employees/que-anh" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white px-7 py-4 font-black text-dark hover:border-primary">Gọi thử Quế Anh <Mic size={18}/></Link>
+              <Link href="/employees/que-anh" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-white px-7 py-4 font-black text-dark hover:border-primary">Sở hữu Quế Anh <Mic size={18}/></Link>
             </div>
           </div>
 
@@ -36,7 +36,7 @@ export function DemoSalesMachine() {
                 <div className="relative text-center text-white">
                   <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-white text-slate-950 shadow-soft"><Play fill="currentColor" size={30}/></div>
                   <p className="mt-5 text-3xl font-black tracking-[-.03em]">AI Sales BĐS Demo</p>
-                  <p className="mt-2 text-sm font-bold text-cyan-200">Video demo: Khách gọi → AI tư vấn → CRM → Dashboard → Sales nhận việc</p>
+                  <p className="mt-2 text-sm font-bold text-cyan-200">Video demo: Khách gọi → Quế Anh tư vấn → CRM → Dashboard → Sales nhận việc</p>
                 </div>
               </div>
               <div className="grid gap-3 border-t border-white/10 p-5 md:grid-cols-3">
@@ -66,11 +66,11 @@ export function EmployeeDepartments() {
       <div className="section-container">
         <div className="mb-14 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <span className="badge">Automation Specialists</span>
-            <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">19 AI Employees sẵn sàng làm việc cho doanh nghiệp của bạn.</h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">Mỗi AI Employee phụ trách một công việc cụ thể như nghe máy, quản lý CRM, chăm sóc khách hàng, tạo nội dung hoặc theo dõi dashboard. Bạn chọn AI phù hợp, chúng tôi triển khai hệ thống Automation trọn gói phía sau.</p>
+            <span className="badge">AI Employees có thể triển khai cho doanh nghiệp</span>
+            <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Chọn AI Employee bạn muốn sở hữu cho doanh nghiệp của mình.</h2>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-muted">Mỗi AI Employee đảm nhận một công việc cụ thể: nghe máy, chăm sóc khách hàng, cập nhật CRM, quản lý dashboard hoặc vận hành content. Doanh nghiệp chọn nhân sự AI phù hợp, Huy Automation AI triển khai trọn gói để AI đó làm việc trong quy trình thật.</p>
           </div>
-          <Link href="/#lead" className="rounded-full bg-dark px-6 py-4 text-center font-black text-white hover:bg-primary">Chọn AI Employee phù hợp</Link>
+          <Link href="/consultation?source=v21-ai-employee" className="rounded-full bg-dark px-6 py-4 text-center font-black text-white hover:bg-primary">Sở hữu AI Employee</Link>
         </div>
         <div className="grid gap-6 lg:grid-cols-2">
           {departments.map((dept) => (
@@ -109,18 +109,18 @@ export function EmployeeDepartments() {
 
 export function AICompanyMap() {
   const nodes = [
-    { icon: Bot, label: 'AI Employees', desc: 'Khách nhớ tên Quế Anh, Hà Anh, Vân Anh trước khi hiểu workflow phía sau.', href: '/#employees' },
-    { icon: Workflow, label: 'Automation Platform', desc: 'Các AI Employees kết nối với nhau thành một hệ thống vận hành thống nhất.', href: '/#build' },
+    { icon: Bot, label: 'AI Employees', desc: 'Mỗi AI Employee giải quyết một bài toán vận hành cụ thể cho doanh nghiệp.', href: '/#employees' },
+    { icon: Workflow, label: 'Triển khai linh hoạt', desc: 'Bắt đầu với một việc cần tự động hóa nhất, sau đó mở rộng khi doanh nghiệp sẵn sàng.', href: '/#pricing' },
     { icon: LayoutDashboard, label: 'Live Demo & Dashboard', desc: 'Demo BĐS chứng minh mô hình có thể chuyển đổi sang nhiều ngành.', href: '/#demo' },
-    { icon: CircleDollarSign, label: 'Sales Conversion Hub', desc: 'Khách hàng trải nghiệm demo, chọn giải pháp và để lại thông tin tư vấn.', href: '/#lead' },
+    { icon: CircleDollarSign, label: 'Điểm chạm chốt sale', desc: 'Khách xem demo, chọn AI Employee cần sở hữu và liên hệ để triển khai.', href: '/#lead' },
   ];
   return (
     <section id="os" className="bg-white py-28 scroll-mt-24">
       <div className="section-container">
         <div className="mx-auto max-w-4xl text-center">
-          <span className="badge">AI Company OS</span>
-          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-6xl">Không mua nhiều phần mềm rời rạc. Sở hữu một đội ngũ AI vận hành doanh nghiệp.</h2>
-          <p className="mt-5 text-lg leading-8 text-muted">Mỗi AI Employee đảm nhiệm một công việc chuyên biệt và phối hợp với các AI khác để tạo thành một hệ thống Automation thống nhất, giúp doanh nghiệp bán hàng, chăm sóc khách hàng và vận hành hiệu quả hơn.</p>
+          <span className="badge">AI Employee Sales Hub</span>
+          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-6xl">Sở hữu đội ngũ AI Employees để bán hàng, chăm sóc khách và vận hành 24/7.</h2>
+          <p className="mt-5 text-lg leading-8 text-muted">Doanh nghiệp có thể xem demo thực tế, hiểu kết quả nhận được và chọn AI Employee phù hợp để triển khai ngay vào quy trình bán hàng, chăm sóc khách hàng hoặc vận hành.</p>
         </div>
         <div className="mt-14 grid gap-5 lg:grid-cols-4">
           {nodes.map((node) => {
@@ -138,15 +138,15 @@ export function AICompanyMap() {
 }
 
 export function FounderJourney() {
-  const steps = ['20+ năm làm nghề ảnh', 'Bắt đầu tìm hiểu Automation', 'Xây WF00-WF09', 'Tạo 19 AI Employees', 'Biến workflow thành sản phẩm bán hàng'];
+  const steps = ['Chọn giải pháp AI đầu tiên', 'Đưa vào vận hành thực tế', 'Theo dõi kết quả rõ ràng', 'Bổ sung năng lực khi cần', 'Xây dựng đội ngũ AI theo từng bước'];
   return (
     <section id="journey" className="bg-bg py-28 scroll-mt-24">
       <div className="section-container grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
         <div>
           <span className="badge">Build in Public</span>
-          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-5xl">Build in Public là bằng chứng cho chất lượng hệ thống.</h2>
-          <p className="mt-5 text-lg leading-8 text-muted">Mọi AI Employee và mọi giải pháp trên website đều được Huy Automation AI xây dựng, sử dụng và tối ưu trong hoạt động hằng ngày trước khi triển khai cho khách hàng. Bạn không mua một ý tưởng, bạn sở hữu một hệ thống đã được kiểm chứng bằng thực tế.</p>
-          <Link href="/blog" className="mt-8 inline-flex rounded-full bg-primary px-6 py-4 font-black text-white">Xem hành trình Build in Public</Link>
+          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-5xl">Theo dõi cách AI Employees được xây dựng và ứng dụng vào kinh doanh.</h2>
+          <p className="mt-5 text-lg leading-8 text-muted">Khách hàng có thể theo dõi hành trình xây dựng hệ thống, xem demo thực tế và đánh giá năng lực triển khai trước khi liên hệ.</p>
+          <Link href="/blog" className="mt-8 inline-flex rounded-full bg-primary px-6 py-4 font-black text-white">Xem cách hệ thống được xây dựng</Link>
         </div>
         <div className="space-y-4">
           {steps.map((step, index) => (
@@ -166,8 +166,8 @@ export function BuildInPublicTimeline() {
     <section id="build" className="bg-dark py-28 text-white scroll-mt-24">
       <div className="section-container">
         <span className="inline-flex rounded-full border border-cyan-300/30 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.15em] text-cyan-200">AI Employee Marketplace</span>
-        <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Hệ thống Automation đứng sau mỗi AI Employee.</h2>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">Mỗi AI Employee được xây dựng để giải quyết một công việc cụ thể trong doanh nghiệp. Khi triển khai, bạn không chỉ sở hữu một AI mà còn nhận toàn bộ hệ thống Automation đã được thiết kế, kiểm thử và vận hành thực tế.</p>
+        <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Mỗi AI Employee đi kèm một hệ thống triển khai hoàn chỉnh.</h2>
+        <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">Doanh nghiệp có thể bắt đầu với một việc cụ thể như tiếp nhận khách, lưu thông tin và báo đội sales. Khi nhu cầu tăng, hệ thống có thể mở rộng thêm CRM, dashboard và điều phối vận hành.</p>
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {workflows.map((wf) => {
             const sales = getWorkflowSalesCopy(wf);
@@ -198,8 +198,8 @@ export function GSystemRoadmap() {
   return (
     <section id="roadmap" className="bg-white py-28 scroll-mt-24">
       <div className="section-container">
-        <span className="badge">Automation Packages</span>
-        <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-5xl">Các gói nhỏ có thể bán riêng, gói BĐS là flagship demo.</h2>
+        <span className="badge">Gói sở hữu AI Employees</span>
+        <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-5xl">Bắt đầu từ một AI Employee, mở rộng thành cả đội ngũ AI khi doanh nghiệp sẵn sàng.</h2>
         <div className="mt-14 grid gap-5 md:grid-cols-5">
           {systems.map((g) => (
             <a key={g.id} href={`/systems/${g.slug}`} className="block rounded-[28px] border border-border bg-bg p-6 transition hover:-translate-y-1 hover:border-primary hover:bg-blue-50">
@@ -220,8 +220,8 @@ export function CaseAndBlogPlaceholders() {
     <>
       <section id="cases" className="bg-bg py-28 scroll-mt-24">
         <div className="section-container">
-          <span className="badge">Case Studies & Demo</span>
-          <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-5xl">Bằng chứng để khách tin hệ thống chạy thật.</h2>
+          <span className="badge">Case Study & Demo thực tế</span>
+          <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-5xl">Doanh nghiệp giống bạn có thể ứng dụng AI Employees như thế nào?</h2>
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             {caseStudies.map((item, index) => (
               <a key={item.slug} href={`/case-studies/${item.slug}`} className={`block rounded-[32px] border p-7 shadow-sm transition hover:-translate-y-1 hover:border-primary ${index === 0 ? 'border-primary bg-blue-50' : 'border-border bg-white'}`}>
@@ -236,8 +236,8 @@ export function CaseAndBlogPlaceholders() {
       </section>
       <section id="blog" className="bg-white py-28 scroll-mt-24">
         <div className="section-container">
-          <span className="badge">Build In Public Content</span>
-          <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-5xl">Content ngoài kênh kéo lead về đây.</h2>
+          <span className="badge">Content kéo khách về Website</span>
+          <h2 className="mt-5 max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-5xl">Từ mạng xã hội đến website, khách hàng có thể xem demo và lựa chọn giải pháp phù hợp.</h2>
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             {blogPosts.map((post, index) => (
               <a key={post.slug} href={`/blog/${post.slug}`} className="block rounded-[28px] border border-border bg-bg p-7 transition hover:-translate-y-1 hover:border-primary hover:bg-blue-50">
@@ -259,23 +259,23 @@ export function LeadMagnetForm() {
     <section id="lead" className="bg-gradient-to-br from-blue-50 via-white to-cyan-50 py-28 scroll-mt-24">
       <div className="section-container grid gap-10 lg:grid-cols-2 lg:items-center">
         <div>
-          <span className="badge">Own Your AI Employee</span>
-          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-5xl">Muốn sở hữu Quế Anh, Hà Anh, Vân Anh hay một workflow riêng?</h2>
-          <p className="mt-5 text-lg leading-8 text-muted">Để lại thông tin. Huy Automation AI sẽ audit quy trình hiện tại và đề xuất AI Employee đầu tiên nên triển khai cho doanh nghiệp của bạn.</p>
+          <span className="badge">Sở hữu AI Employee</span>
+          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-5xl">Muốn bắt đầu bằng AI Employee đầu tiên cho doanh nghiệp của bạn?</h2>
+          <p className="mt-5 text-lg leading-8 text-muted">Chọn một việc đang làm mất thời gian nhất: chăm khách, cập nhật CRM, báo cáo dashboard hoặc đăng nội dung. Huy Automation AI sẽ tư vấn AI Employee phù hợp để bắt đầu nhỏ, dễ xuống tiền và dễ mở rộng.</p>
           <div className="mt-8 grid gap-3 text-sm font-bold text-dark sm:grid-cols-2">
-            {['Chọn AI Employee phù hợp', 'Xem demo workflow thật', 'Ước lượng chi phí triển khai', 'Có thể chuyển đổi theo ngành'].map((item) => (
+            {['Từ 5 triệu', 'Chọn một việc cần tự động hóa trước', 'Mở rộng khi thấy phù hợp', 'Có thể chuyển đổi theo ngành'].map((item) => (
               <div key={item} className="rounded-2xl bg-white p-4 shadow-sm">✓ {item}</div>
             ))}
           </div>
         </div>
         <form className="rounded-[32px] border border-border bg-white p-8 shadow-soft">
-          {['Tên', 'Email', 'SĐT', 'Ngành nghề / Fanpage / Website', 'Bạn muốn sở hữu AI nào hoặc tự động hóa việc gì?'].map((field) => (
+          {['Tên', 'Email', 'SĐT', 'Ngành nghề / Fanpage / Website', 'Bạn muốn sở hữu AI nào? Ví dụ: Quế Anh, Vân Anh, Hải Anh...'].map((field) => (
             <label key={field} className="mb-4 block">
               <span className="mb-2 block text-sm font-bold text-dark">{field}</span>
               <input className="w-full rounded-2xl border border-border px-4 py-4 outline-none focus:border-primary" />
             </label>
           ))}
-          <a href="/consultation?source=v19-sales-hub" className="mt-2 block w-full rounded-full bg-primary px-7 py-4 text-center font-bold text-white">Gửi yêu cầu demo Automation</a>
+          <a href="/consultation?source=v19-sales-hub" className="mt-2 block w-full rounded-full bg-primary px-7 py-4 text-center font-bold text-white">Tư vấn AI Employee đầu tiên</a>
         </form>
       </div>
     </section>
@@ -284,30 +284,55 @@ export function LeadMagnetForm() {
 
 export function PricingSection() {
   const plans = [
-    { name: 'Single AI Employee', price: '15 - 30 triệu', desc: 'Triển khai một workflow cụ thể như đăng Facebook, CRM, dashboard hoặc follow-up.', items: ['1 AI Employee', '1 workflow chính', 'Form/CRM cơ bản', 'Handover vận hành'] },
-    { name: 'AI Sales Machine', price: '30 - 70 triệu', desc: 'Gói bán hàng/chăm sóc khách hàng tự động. BĐS là bản demo flagship.', items: ['Voice/Chat/CRM', 'Lead scoring', 'Task cho sale', 'Dashboard demo'] },
-    { name: 'AI Business OS', price: '80 - 150 triệu+', desc: 'Xây nhiều AI Employees thành hệ thống vận hành theo phòng ban.', items: ['Nhiều workflow', 'Dashboard quản trị', 'Báo cáo CEO', 'Training & scale'] },
+    {
+      badge: 'Bắt đầu dễ nhất',
+      name: 'AI Employee Mini',
+      price: 'Từ 5 triệu',
+      desc: 'Tự động hóa một việc cụ thể: trả lời khách, ghi nhận thông tin, đẩy dữ liệu về Sheet/CRM hoặc báo Telegram.',
+      items: ['1 AI Employee đầu tiên', '1 quy trình đơn giản', 'Form/Sheet/Telegram', 'Gọn nhẹ, dễ triển khai, dễ mở rộng'],
+      cta: 'Sở hữu AI Employee đầu tiên',
+    },
+    {
+      badge: 'Phù hợp để bán demo',
+      name: 'Quế Anh / AI Sales BĐS',
+      price: 'Từ 9 triệu',
+      desc: 'Dành cho đội sales muốn thử AI trong quy trình bán hàng: tiếp nhận khách, hỏi nhu cầu, lưu lead và nhắc đội sales xử lý tiếp.',
+      items: ['Voice hoặc Chat theo nhu cầu', 'Lead tự động vào CRM/Sheet', 'Thông báo Telegram', 'Có thể nâng cấp dashboard'],
+      cta: 'Sở hữu Quế Anh',
+    },
+    {
+      badge: 'Mở rộng khi sẵn sàng',
+      name: 'AI Business OS',
+      price: 'Liên hệ',
+      desc: 'Dành cho doanh nghiệp muốn xây dựng nhiều AI Employees theo phòng ban: sales, CRM, dashboard, content và vận hành.',
+      items: ['Nhiều AI Employees', 'CRM + Dashboard quản trị', 'Báo cáo cho chủ doanh nghiệp', 'Training, bảo hành và scale'],
+      cta: 'Tư vấn lộ trình mở rộng',
+    },
   ];
   return (
     <section id="pricing" className="bg-white py-28 scroll-mt-24">
       <div className="section-container">
         <div className="max-w-4xl">
-          <span className="badge">Pricing Direction</span>
-          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-5xl">Bắt đầu với một AI Employee, mở rộng thành đội ngũ AI khi doanh nghiệp sẵn sàng.</h2>
-          <p className="mt-5 text-lg leading-8 text-muted">Triển khai từ một AI Employee theo đúng nhu cầu hiện tại của doanh nghiệp. Khi hoạt động mở rộng, có thể bổ sung thêm AI Employees để hình thành một hệ thống Automation hoàn chỉnh mà không cần thay đổi nền tảng.</p>
+          <span className="badge">Bắt đầu từ AI Employee đầu tiên</span>
+          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-5xl">Bắt đầu với AI Employee đầu tiên. Mở rộng khi doanh nghiệp sẵn sàng.</h2>
+          <p className="mt-5 text-lg leading-8 text-muted">Bắt đầu từ 5 triệu cho một việc cụ thể: tiếp nhận khách, lưu thông tin, báo Telegram hoặc cập nhật Sheet/CRM. Khi cần thêm năng lực, doanh nghiệp có thể mở rộng sang AI Sales, CRM, dashboard hoặc điều phối vận hành.</p>
         </div>
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 rounded-[28px] border border-blue-100 bg-blue-50 p-6 text-lg font-bold leading-8 text-dark">
+          Triển khai theo từng bước: chọn việc đang tốn thời gian nhất → đưa AI Employee vào vận hành thật → đo kết quả → mở rộng thêm năng lực khi cần.
+        </div>
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {plans.map((plan, index) => (
-            <div key={plan.name} className={`rounded-[32px] border p-7 shadow-sm ${index === 1 ? 'border-primary bg-blue-50' : 'border-border bg-bg'}`}>
-              <p className="text-sm font-black uppercase tracking-[.12em] text-primary">Gói {index + 1}</p>
+            <div key={plan.name} className={`rounded-[32px] border p-7 shadow-sm ${index === 0 ? 'border-primary bg-blue-50' : 'border-border bg-bg'}`}>
+              <p className="text-sm font-black uppercase tracking-[.12em] text-primary">{plan.badge}</p>
               <h3 className="mt-3 text-2xl font-black text-dark">{plan.name}</h3>
               <p className="mt-3 text-3xl font-black text-dark">{plan.price}</p>
               <p className="mt-4 leading-7 text-muted">{plan.desc}</p>
               <ul className="mt-6 space-y-3">{plan.items.map((item) => <li key={item} className="rounded-2xl bg-white px-4 py-3 text-sm font-bold text-dark">✓ {item}</li>)}</ul>
-              <a href="/#lead" className="mt-7 block rounded-full bg-dark px-6 py-4 text-center font-black text-white hover:bg-primary">Audit trước khi báo giá</a>
+              <a href="/consultation?source=v21-value-ladder" className="mt-7 block rounded-full bg-dark px-6 py-4 text-center font-black text-white hover:bg-primary">{plan.cta}</a>
             </div>
           ))}
         </div>
+        <p className="mt-8 max-w-3xl text-sm leading-7 text-muted">Chi phí thực tế phụ thuộc vào mức độ tích hợp, dữ liệu hiện có và số kênh cần kết nối. Doanh nghiệp có thể bắt đầu từ một AI Employee rồi mở rộng dần thành hệ thống lớn hơn.</p>
       </div>
     </section>
   );
@@ -318,8 +343,8 @@ export function FinalCTA() {
     <section id="contact" className="bg-dark py-24 text-white scroll-mt-24">
       <div className="section-container text-center">
         <h2 className="mx-auto max-w-4xl text-4xl font-black tracking-[-0.04em] md:text-6xl">Không tuyển thêm người. Hãy sở hữu AI Employees.</h2>
-        <p className="mt-5 text-xl text-slate-300">Bắt đầu bằng một workflow đầu tiên, rồi nâng cấp thành đội ngũ AI vận hành 24/7.</p>
-        <a href="/consultation?source=final-cta" className="mt-10 inline-flex rounded-full bg-white px-8 py-4 font-black text-dark">Đặt lịch tư vấn Automation</a>
+        <p className="mt-5 text-xl text-slate-300">Bắt đầu từ một AI Employee, vận hành thật, đo kết quả rõ ràng rồi mở rộng khi doanh nghiệp cần.</p>
+        <a href="/consultation?source=final-cta" className="mt-10 inline-flex rounded-full bg-white px-8 py-4 font-black text-dark">Gọi/Zalo 0838 713 123</a>
       </div>
     </section>
   );
@@ -341,8 +366,8 @@ export function HAIOSRuntimeDashboard() {
         <div className="grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
           <div>
             <span className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[.16em] text-cyan-200">HAIOS Runtime Dashboard</span>
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-6xl">Không chỉ có giao diện đẹp. Có cả hệ thống vận hành phía sau.</h2>
-            <p className="mt-6 text-lg leading-8 text-slate-300">Phần này dùng để demo cho khách hàng thấy một lead đi qua hệ thống như thế nào: từ cuộc gọi đầu tiên đến CRM, task, dashboard và follow-up.</p>
+            <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-6xl">Khách hàng nhìn thấy toàn bộ quy trình AI Sales vận hành.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-300">Quế Anh không chỉ trả lời tự động. Giải pháp kết nối nghe máy, ghi nhận nhu cầu, cập nhật CRM, hiển thị dashboard và tạo follow-up cho đội sales.</p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {[
                 ['Lead mới', '24/7'],
@@ -394,7 +419,7 @@ export function IndustryDemoGrid() {
         <div className="mx-auto max-w-4xl text-center">
           <span className="badge">Industry Demo</span>
           <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-6xl">Một demo BĐS, nhân bản được sang nhiều ngành dịch vụ.</h2>
-          <p className="mt-5 text-lg leading-8 text-muted">Cốt lõi không phải là ngành BĐS. Cốt lõi là quy trình: tiếp nhận khách → hiểu nhu cầu → lưu CRM → giao task → chăm sóc tiếp.</p>
+          <p className="mt-5 text-lg leading-8 text-muted">Giải pháp không chỉ dành cho BĐS. Cùng một quy trình AI Sales có thể áp dụng cho spa, nha khoa, giáo dục và nhiều ngành dịch vụ cần tư vấn khách hàng.</p>
         </div>
         <div className="mt-12 grid gap-5 md:grid-cols-4">
           {industries.map(([title, desc]) => <div key={title} className="rounded-[30px] border border-border bg-bg p-6 transition hover:-translate-y-1 hover:border-primary hover:bg-blue-50"><h3 className="text-2xl font-black text-dark">{title}</h3><p className="mt-4 text-sm leading-7 text-muted">{desc}</p></div>)}

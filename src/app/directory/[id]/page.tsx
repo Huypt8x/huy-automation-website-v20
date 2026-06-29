@@ -29,7 +29,7 @@ export default function DirectoryPage({ params }: { params: { id: string } }) {
           <p className="mt-12 text-sm font-black uppercase tracking-[.18em] text-cyan-300">Employee Directory</p>
           <h1 className="mt-5 text-6xl font-black">{emp.id}</h1>
           <p className="mt-6 max-w-3xl text-xl leading-9 text-slate-300">
-            Mã định danh của nhân sự AI trong Huy Automation System. Dùng để theo dõi vai trò, phòng ban, workflow liên quan và hệ thống đang vận hành.
+            Hồ sơ AI Employee giúp doanh nghiệp hiểu vai trò, nhiệm vụ và giải pháp có thể triển khai cho từng phòng ban.
           </p>
         </div>
       </section>

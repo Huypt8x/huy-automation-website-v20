@@ -3,7 +3,7 @@ export const blogPosts = [
     id: 'POST-01',
     slug: 'vi-sao-toi-xay-ai-company-in-public',
     title: 'Vì sao tôi xây AI Company In Public',
-    excerpt: 'Từ một người làm nghề ảnh hơn 20 năm đến quyết định công khai xây một AI Company bằng AI Employees, Workflows và Automation.',
+    excerpt: 'Hành trình xây đội ngũ AI Employees để giúp doanh nghiệp bán hàng, chăm sóc khách hàng và vận hành hiệu quả hơn.',
     category: 'Founder Diary',
     sections: [
       'Tôi không bắt đầu bằng một công ty công nghệ. Tôi bắt đầu từ một studio ảnh gia đình, nơi mọi thứ đều rất thật: khách hàng thật, deadline thật, đơn hàng thật và áp lực vận hành thật.',
@@ -18,7 +18,7 @@ export const blogPosts = [
     excerpt: '10 workflow đầu tiên tạo thành hệ thống nội dung tự động: từ story direction, bài viết, hình ảnh, publisher đến analytics và learning loop.',
     category: 'Build In Public',
     sections: [
-      'WF00-WF09 không chỉ là vài automation rời rạc. Đây là xương sống đầu tiên của Huy Automation System.',
+      'WF00-WF09 tạo nền tảng đầu tiên để doanh nghiệp có thể sản xuất nội dung, đo lường hiệu quả và vận hành nhất quán.',
       'WF00 chọn hướng câu chuyện. WF01 viết bài. WF02 định hướng hình ảnh. WF03 tạo image job. WF04 render ảnh. WF05-WF06 chuẩn bị publish. WF07-WF09 tạo vòng feedback, analytics và learning.',
       'Khi 10 workflow này kết nối, nội dung không còn là việc làm thủ công từng bài. Nó trở thành một hệ thống có input, output, trạng thái và khả năng học.'
     ]

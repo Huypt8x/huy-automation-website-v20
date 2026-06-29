@@ -8,7 +8,8 @@ const links = [
   { label: 'AI Employees', href: '/#employees', key: 'employees' },
   { label: 'AI Marketplace', href: '/#build', key: 'build' },
   { label: 'Giải pháp', href: '/#os', key: 'os' },
-  { label: 'Bảng giá', href: '/#pricing', key: 'pricing' },
+  { label: 'Từ 5 triệu', href: '/#pricing', key: 'pricing' },
+  { label: 'Liên hệ', href: '/#contact', key: 'contact' },
 ];
 
 function detectActive(pathname: string, hash: string) {
@@ -47,7 +48,7 @@ export function Header() {
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-lg font-black text-white">H</div>
           <div>
             <p className="text-sm font-black tracking-tight">HUY AUTOMATION AI</p>
-            <p className="text-[11px] font-semibold uppercase tracking-[.18em] text-muted">AI Experience Hub</p>
+            <p className="text-[11px] font-semibold uppercase tracking-[.18em] text-muted">AI Employee Hub</p>
           </div>
         </a>
 
@@ -63,7 +64,7 @@ export function Header() {
           })}
         </nav>
 
-        <a href="/#lead" className="rounded-full bg-dark px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-primary">Sở hữu AI</a>
+        <a href="tel:0838713123" className="rounded-full bg-dark px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-primary">0838 713 123</a>
       </div>
     </header>
   );

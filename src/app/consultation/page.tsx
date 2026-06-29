@@ -11,10 +11,10 @@ export default function ConsultationPage() {
         <div className="section-container relative mx-auto max-w-4xl text-center">
           <span className="badge">Lead Form</span>
           <h1 className="mt-6 text-5xl font-black tracking-[-0.04em] md:text-7xl">
-            Tôi muốn sở hữu AI Employee / Workflow / AI Company OS
+            Tư vấn AI Employee đầu tiên cho doanh nghiệp
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-muted">
-            Chọn nhân viên AI, workflow hoặc hệ thống bạn muốn xem demo. Huy Automation sẽ tư vấn cách triển khai phù hợp với doanh nghiệp của bạn.
+            Chọn AI Employee phù hợp với vấn đề hiện tại của doanh nghiệp: bán hàng, chăm sóc khách, CRM, dashboard hoặc content.
           </p>
         </div>
       </section>
@@ -22,7 +22,7 @@ export default function ConsultationPage() {
       <section className="pb-24">
         <div className="section-container mx-auto max-w-3xl">
           <form className="rounded-[36px] border border-border bg-white p-8 shadow-soft md:p-10">
-            {['Họ tên', 'Email', 'SĐT / Zalo', 'Bạn muốn sở hữu AI Employee / Workflow nào?', 'Mô tả nhu cầu automation hiện tại'].map((field) => (
+            {['Họ tên', 'Email', 'SĐT / Zalo', 'Bạn muốn bắt đầu với AI Employee nào?', 'Vấn đề hiện tại muốn giải quyết'].map((field) => (
               <label key={field} className="mb-5 block text-left">
                 <span className="mb-2 block text-sm font-bold text-dark">{field}</span>
                 <input className="w-full rounded-2xl border border-border bg-white px-4 py-4 outline-none transition focus:border-primary focus:ring-4 focus:ring-blue-100" />
@@ -32,11 +32,11 @@ export default function ConsultationPage() {
               Gửi yêu cầu tư vấn
             </button>
             <div className="mt-8 grid gap-3 text-left text-sm text-muted md:grid-cols-3">
-              <p className="rounded-2xl bg-bg p-4 font-semibold">✓ WF00-WF09</p>
-              <p className="rounded-2xl bg-bg p-4 font-semibold">✓ 19 AI Employees</p>
-              <p className="rounded-2xl bg-bg p-4 font-semibold">✓ G1-G5 AI Company OS</p>
+              <p className="rounded-2xl bg-bg p-4 font-semibold">✓ Từ 5 triệu</p>
+              <p className="rounded-2xl bg-bg p-4 font-semibold">✓ Chọn một việc cần tự động hóa trước</p>
+              <p className="rounded-2xl bg-bg p-4 font-semibold">✓ Mở rộng khi cần</p>
             </div>
-            <p className="mt-5 text-center text-sm text-muted">Sau khi gửi form, đội Huy Automation sẽ liên hệ để tư vấn demo phù hợp.</p>
+            <p className="mt-5 text-center text-sm text-muted">Sau khi gửi form, đội Huy Automation AI sẽ liên hệ để tư vấn demo phù hợp.</p>
           </form>
         </div>
       </section>

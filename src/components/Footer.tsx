@@ -8,7 +8,7 @@ export function Footer() {
         </div>
         <div>
           <h4 className="font-black text-white">Giải pháp</h4>
-          <div className="mt-4 flex flex-col gap-3 text-sm"><a href="/#demo">Demo BĐS</a><a href="/#employees">19 AI Employees</a><a href="/#build">AI Employee Marketplace</a><a href="/#pricing">Bảng giá</a></div>
+          <div className="mt-4 flex flex-col gap-3 text-sm"><a href="/#demo">Demo BĐS</a><a href="/#employees">19 AI Employees</a><a href="/#build">AI Employee Marketplace</a><a href="/#pricing">Từ 5 triệu</a></div>
         </div>
         <div>
           <h4 className="font-black text-white">AI nổi bật</h4>
@@ -16,7 +16,7 @@ export function Footer() {
         </div>
         <div>
           <h4 className="font-black text-white">Liên hệ tư vấn</h4>
-          <div className="mt-4 flex flex-col gap-3 text-sm"><a href="/consultation">Form tư vấn</a><a href="/#lead">Chọn AI Employee</a><a href="mailto:huypt8x@gmail.com">huypt8x@gmail.com</a></div>
+          <div className="mt-4 flex flex-col gap-3 text-sm"><a href="tel:0838713123">Gọi: 0838 713 123</a><a href="https://zalo.me/0838713123">Chat Zalo</a><a href="/consultation">Form tư vấn</a><a href="mailto:huypt8x@gmail.com">huypt8x@gmail.com</a></div>
         </div>
       </div>
     </footer>

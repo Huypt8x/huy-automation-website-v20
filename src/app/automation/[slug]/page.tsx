@@ -17,35 +17,35 @@ function getPackageForWorkflow(workflow: Workflow) {
   if (slug.includes('wf14') || text.includes('SALES')) {
     return {
       name: 'AI Sales Machine',
-      price: '30 - 50 triệu',
-      bestFor: 'Doanh nghiệp cần chăm sóc lead, giao việc sales và quản lý pipeline.',
-      includes: ['CRM + Memory', 'Sales pipeline', 'COO task routing', 'Forecast doanh thu'],
+      price: 'Từ 9 triệu',
+      bestFor: 'Doanh nghiệp muốn bắt đầu bằng một AI Employee xử lý lead và chăm sóc khách hàng.',
+      includes: ['1 AI Employee sales', 'CRM/Sheet cơ bản', 'Thông báo Telegram', 'Có thể nâng cấp pipeline'],
     };
   }
 
   if (slug.includes('wf22') || slug.includes('wf23') || slug.includes('wf24') || text.includes('COO') || text.includes('FORECAST')) {
     return {
       name: 'AI Business OS',
-      price: '80 - 150 triệu',
-      bestFor: 'Doanh nghiệp muốn có tầng điều hành, giao việc, theo dõi và dự báo.',
-      includes: ['COO AI', 'Execution Manager', 'Forecast Engine', 'CEO Dashboard'],
+      price: 'Liên hệ',
+      bestFor: 'Doanh nghiệp đã có AI Employee đầu tiên và muốn mở rộng thành đội ngũ AI vận hành.',
+      includes: ['Nhiều AI Employees', 'Điều phối công việc', 'Dashboard quản trị', 'Training & scale'],
     };
   }
 
   if (['wf07', 'wf08', 'wf09'].includes(slug)) {
     return {
       name: 'AI Growth & Analytics Machine',
-      price: '30 - 80 triệu',
-      bestFor: 'Doanh nghiệp cần đọc số liệu, ghi nhận feedback và tối ưu vòng sau.',
-      includes: ['Analytics', 'Feedback loop', 'Learning Engine', 'Growth insight'],
+      price: 'Từ 8 triệu',
+      bestFor: 'Doanh nghiệp muốn có một AI Employee đọc số liệu, cảnh báo và hỗ trợ ra quyết định.',
+      includes: ['Dashboard cơ bản', 'Báo cáo định kỳ', 'Cảnh báo chỉ số', 'Nâng cấp learning sau'],
     };
   }
 
   return {
     name: 'AI Content Machine',
-    price: '15 - 30 triệu',
-    bestFor: 'Doanh nghiệp cần tạo nội dung đều, có kế hoạch và có tài sản thương hiệu.',
-    includes: ['Content roadmap', 'Story workflow', 'Visual direction', 'Publish support'],
+    price: 'Từ 5 triệu',
+    bestFor: 'Doanh nghiệp muốn thử một AI Employee làm nội dung, chăm kênh hoặc tự động hóa một đầu việc nhỏ.',
+    includes: ['1 AI Employee đầu tiên', '1 quy trình đơn giản', 'Sheet/Telegram/Form', 'Có thể mở rộng sau'],
   };
 }
 
@@ -66,7 +66,7 @@ function getRoiForWorkflow(workflow: Workflow) {
       { label: 'Tiết kiệm', value: '5-10 giờ/tuần tổng hợp vận hành' },
       { label: 'Thay thế', value: 'Báo cáo thủ công mỗi ngày' },
       { label: 'Tạo', value: 'Ưu tiên việc và forecast doanh thu' },
-      { label: 'Tác động', value: 'CEO biết điểm nghẽn ngay' },
+      { label: 'Tác động', value: 'Chủ doanh nghiệp biết điểm nghẽn ngay' },
     ];
   }
 
@@ -184,15 +184,15 @@ export default function WorkflowDetailPage({ params }: { params: { slug: string 
       <section className="bg-white py-20">
         <div className="section-container grid gap-8 lg:grid-cols-[1.2fr_.8fr]">
           <div className="rounded-[32px] border border-border bg-bg p-8">
-            <span className="badge">Minh chứng workflow thật</span>
-            <h2 className="mt-5 text-3xl font-black">Screenshot n8n / workflow thực tế</h2>
+            <span className="badge">Minh chứng hệ thống thật</span>
+            <h2 className="mt-5 text-3xl font-black">Minh chứng vận hành thực tế</h2>
             <div className="mt-6 overflow-hidden rounded-[28px] border border-border bg-dark">
               <img src={workflow.imageUrl || '/media/workflows/workflow-placeholder.png'} alt={`${workflow.id} workflow screenshot`} className="h-auto w-full object-cover" />
             </div>
           </div>
           <div id="video" className="rounded-[32px] border border-border bg-bg p-8">
             <span className="badge">Video demo</span>
-            <h2 className="mt-5 text-3xl font-black">Khách xem trước khi ra quyết định</h2>
+            <h2 className="mt-5 text-3xl font-black">Demo giúp doanh nghiệp đánh giá trước khi triển khai</h2>
             <div className="mt-6 flex aspect-video items-center justify-center rounded-[28px] bg-dark text-center text-white">
               <div className="p-8">
                 <p className="text-3xl font-black">Video Demo</p>
@@ -208,7 +208,7 @@ export default function WorkflowDetailPage({ params }: { params: { slug: string 
         <div className="section-container grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
           <div className="rounded-[32px] border border-border bg-white p-8 shadow-sm">
             <span className="badge">ROI cho chủ doanh nghiệp</span>
-            <h2 className="mt-5 text-3xl font-black">Tại sao workflow này đáng mua?</h2>
+            <h2 className="mt-5 text-3xl font-black">Giá trị doanh nghiệp nhận được</h2>
             <div className="mt-6 grid gap-3">
               {roi.map((item) => (
                 <div key={item.label} className="rounded-2xl bg-bg p-4">
@@ -220,7 +220,7 @@ export default function WorkflowDetailPage({ params }: { params: { slug: string 
           </div>
 
           <div className="rounded-[32px] border border-primary bg-blue-50 p-8 shadow-sm">
-            <span className="badge">Gói triển khai</span>
+            <span className="badge">Bắt đầu từ một AI Employee</span>
             <h2 className="mt-5 text-3xl font-black">{productPackage.name}</h2>
             <p className="mt-3 text-4xl font-black text-dark">{productPackage.price}</p>
             <p className="mt-4 text-lg leading-8 text-muted">{productPackage.bestFor}</p>
@@ -239,14 +239,14 @@ export default function WorkflowDetailPage({ params }: { params: { slug: string 
         <div className="section-container grid gap-8 md:grid-cols-2">
           <div className="rounded-[32px] border border-border bg-bg p-8">
             <span className="badge">Powered By</span>
-            <h2 className="mt-5 text-3xl font-black">Công nghệ phía sau</h2>
+            <h2 className="mt-5 text-3xl font-black">Hệ thống triển khai đi kèm</h2>
             <div className="mt-6 flex flex-wrap gap-2">{workflow.tools.map((tool) => <span key={tool} className="rounded-full bg-blue-50 px-4 py-2 text-sm font-black text-primary">{tool}</span>)}</div>
             <h3 className="mt-8 text-xl font-black">Gắn với G-System</h3>
             <div className="mt-4 grid gap-3">{relatedSystems.map((sys) => <Link key={sys.slug} href={`/systems/${sys.slug}`} className="rounded-2xl bg-white p-4 font-black hover:bg-blue-50">{sys.id} — {sys.name}</Link>)}</div>
           </div>
           <div className="rounded-[32px] border border-border bg-bg p-8">
             <span className="badge">Bước tiếp theo</span>
-            <h2 className="mt-5 text-3xl font-black">Muốn biết workflow này có phù hợp với doanh nghiệp của anh/chị không?</h2>
+            <h2 className="mt-5 text-3xl font-black">Muốn biết giải pháp này có phù hợp với doanh nghiệp của anh/chị không?</h2>
             <p className="mt-4 leading-8 text-muted">Bắt đầu bằng Audit AI miễn phí. Huy Automation sẽ nhìn vào ngành nghề, quy trình bán hàng hiện tại và đề xuất nên bắt đầu từ Lead Machine, Sales Machine hay Business OS.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/#lead" className="rounded-full bg-primary px-7 py-4 font-black text-white">Nhận Audit AI miễn phí</Link>
