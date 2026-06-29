@@ -7,6 +7,8 @@ import {
   CaseAndBlogPlaceholders,
   DemoSalesMachine,
   EmployeeDepartments,
+  HAIOSRuntimeDashboard,
+  IndustryDemoGrid,
   FinalCTA,
   FounderJourney,
   GSystemRoadmap,
@@ -20,7 +22,9 @@ export default function Home() {
       <Header />
       <HeroFounder />
       <DemoSalesMachine />
+      <HAIOSRuntimeDashboard />
       <EmployeeDepartments />
+      <IndustryDemoGrid />
       <AICompanyMap />
       <FounderJourney />
       <BuildInPublicTimeline />

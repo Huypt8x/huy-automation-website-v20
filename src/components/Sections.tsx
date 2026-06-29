@@ -324,3 +324,82 @@ export function FinalCTA() {
     </section>
   );
 }
+
+export function HAIOSRuntimeDashboard() {
+  const lanes = [
+    ['Voice Inbound', 'WF31', 'Quế Anh nghe máy, hỏi nhu cầu, giữ cuộc trò chuyện tự nhiên.', 'LIVE'],
+    ['Transcript', 'WF31D', 'Trâm Anh ghi lại cuộc gọi, tách ngân sách, khu vực, timeline.', 'SYNC'],
+    ['CRM Lead', 'WF14', 'Hà Anh tạo lead, chấm điểm nóng/lạnh, lưu nguồn.', 'HOT'],
+    ['Execution', 'WF23', 'Giang Anh giao task cho sales hoặc owner phù hợp.', 'ROUTE'],
+    ['Dashboard', 'WF08', 'Vân Anh hiển thị số liệu và cảnh báo để chủ doanh nghiệp theo dõi.', 'OK'],
+  ];
+
+  return (
+    <section id="runtime" className="relative overflow-hidden bg-slate-950 py-28 text-white scroll-mt-24">
+      <div className="absolute inset-0 grid-pattern opacity-40" />
+      <div className="section-container relative">
+        <div className="grid gap-12 lg:grid-cols-[.95fr_1.05fr] lg:items-center">
+          <div>
+            <span className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-xs font-black uppercase tracking-[.16em] text-cyan-200">HAIOS Runtime Dashboard</span>
+            <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-6xl">Không chỉ có giao diện đẹp. Có cả hệ thống vận hành phía sau.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-300">Phần này dùng để demo cho khách hàng thấy một lead đi qua hệ thống như thế nào: từ cuộc gọi đầu tiên đến CRM, task, dashboard và follow-up.</p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {[
+                ['Lead mới', '24/7'],
+                ['CRM tự cập nhật', 'Tự động'],
+                ['Sales nhận việc', 'Có task'],
+              ].map(([a,b]) => <div key={a} className="rounded-3xl border border-white/10 bg-white/[0.06] p-5"><p className="text-2xl font-black">{b}</p><p className="mt-1 text-sm font-bold text-slate-300">{a}</p></div>)}
+            </div>
+          </div>
+
+          <div className="rounded-[36px] border border-white/10 bg-white/[0.06] p-5 shadow-soft backdrop-blur">
+            <div className="rounded-[28px] border border-white/10 bg-[#020617] p-5">
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[.16em] text-cyan-300">Pipeline đang chạy</p>
+                  <p className="mt-1 text-2xl font-black">AI Sales BĐS</p>
+                </div>
+                <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-xs font-black text-emerald-300">● ONLINE</span>
+              </div>
+              <div className="mt-5 space-y-3">
+                {lanes.map(([title, wf, desc, status], index) => (
+                  <div key={wf} className="grid gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 md:grid-cols-[42px_1fr_auto] md:items-center">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cyan-300/10 text-sm font-black text-cyan-200">{index + 1}</div>
+                    <div>
+                      <p className="font-black text-white">{title} <span className="text-cyan-300">/ {wf}</span></p>
+                      <p className="mt-1 text-sm leading-6 text-slate-300">{desc}</p>
+                    </div>
+                    <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-black text-slate-200">{status}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function IndustryDemoGrid() {
+  const industries = [
+    ['Bất động sản', 'Khách gọi hỏi dự án, AI tư vấn, CRM tự tạo lead HOT.'],
+    ['Spa / thẩm mỹ', 'Tư vấn dịch vụ, đặt lịch, nhắc lịch và chăm sóc lại.'],
+    ['Nha khoa', 'Tiếp nhận nhu cầu, phân loại ca, hẹn lịch tư vấn.'],
+    ['Giáo dục', 'Tư vấn khóa học, thu thông tin học viên, follow-up.'],
+  ];
+  return (
+    <section id="industry" className="bg-white py-28 scroll-mt-24">
+      <div className="section-container">
+        <div className="mx-auto max-w-4xl text-center">
+          <span className="badge">Industry Demo</span>
+          <h2 className="mt-5 text-4xl font-black tracking-[-0.04em] md:text-6xl">Một demo BĐS, nhân bản được sang nhiều ngành dịch vụ.</h2>
+          <p className="mt-5 text-lg leading-8 text-muted">Cốt lõi không phải là ngành BĐS. Cốt lõi là quy trình: tiếp nhận khách → hiểu nhu cầu → lưu CRM → giao task → chăm sóc tiếp.</p>
+        </div>
+        <div className="mt-12 grid gap-5 md:grid-cols-4">
+          {industries.map(([title, desc]) => <div key={title} className="rounded-[30px] border border-border bg-bg p-6 transition hover:-translate-y-1 hover:border-primary hover:bg-blue-50"><h3 className="text-2xl font-black text-dark">{title}</h3><p className="mt-4 text-sm leading-7 text-muted">{desc}</p></div>)}
+        </div>
+      </div>
+    </section>
+  );
+}

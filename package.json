@@ -1,6 +1,6 @@
 {
   "name": "huy-automation-ai-website-v20",
-  "version": "20.0.0",
+  "version": "20.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

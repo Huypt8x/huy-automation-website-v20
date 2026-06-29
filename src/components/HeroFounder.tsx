@@ -1,52 +1,52 @@
-import { ArrowRight, CheckCircle2, MessageCircle, PhoneCall, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, MessageCircle, PhoneCall, Sparkles, Activity, ShieldCheck, Zap } from 'lucide-react';
 
 const liveStats = [
-  ['AI Employees Online', '19'],
-  ['Automation Running', '127'],
-  ['Tasks Completed Today', '2,486'],
-  ['CRM Updates', '198'],
+  ['AI Employees', '19'],
+  ['Workflow live', '31+'],
+  ['Lead flow', '24/7'],
+  ['Demo ngành', 'BĐS'],
 ];
 
 const runningJobs = [
-  ['WF31', 'Quế Anh đang nghe cuộc gọi mới', 'Voice AI'],
-  ['WF14', 'Hà Anh vừa cập nhật CRM lead', 'CRM'],
-  ['WF08', 'Vân Anh đồng bộ dashboard', 'Dashboard'],
-  ['WF23', 'Giang Anh route task cho sales', 'Execution'],
-  ['WF05', 'Mai Anh chuẩn bị lịch đăng Facebook', 'Publishing'],
-  ['WF01', 'Huyền Anh viết bản nháp mới', 'Content'],
+  ['WF31', 'Quế Anh đang nhận cuộc gọi khách mới', 'Voice AI', 'LIVE'],
+  ['WF31D', 'Trâm Anh đang tách transcript thành dữ liệu', 'Transcript', 'RUN'],
+  ['WF14', 'Hà Anh cập nhật CRM lead HOT', 'CRM', 'SYNC'],
+  ['WF23', 'Giang Anh giao task cho sales phụ trách', 'Task', 'ROUTE'],
+  ['WF08', 'Vân Anh cập nhật dashboard điều hành', 'Dashboard', 'OK'],
+  ['WF30', 'Phương Anh chuẩn bị follow-up tiếp theo', 'Follow-up', 'READY'],
 ];
 
-const aiOnline = ['Quế Anh', 'Hà Anh', 'Vân Anh', 'Mai Anh', 'Lan Anh', 'Trâm Anh', 'Hải Anh', 'Việt Anh'];
+const aiOnline = ['Quế Anh', 'Hà Anh', 'Vân Anh', 'Trâm Anh', 'Giang Anh', 'Phương Anh', 'Mai Anh', 'Hải Anh'];
 
 export function HeroFounder() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-[#020617] text-white scroll-mt-24">
-      <div className="absolute inset-0 grid-pattern opacity-70" />
-      <div className="absolute -left-28 top-10 h-96 w-96 rounded-full bg-blue-500/30 blur-3xl pulse-glow" />
-      <div className="absolute right-0 top-20 h-[32rem] w-[32rem] rounded-full bg-cyan-400/20 blur-3xl pulse-glow" />
-      <div className="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-violet-500/20 blur-3xl" />
+      <div className="absolute inset-0 grid-pattern opacity-60" />
+      <div className="absolute -left-24 top-0 h-[34rem] w-[34rem] rounded-full bg-cyan-500/25 blur-3xl pulse-glow" />
+      <div className="absolute right-0 top-24 h-[38rem] w-[38rem] rounded-full bg-blue-600/25 blur-3xl pulse-glow" />
+      <div className="absolute bottom-0 left-1/2 h-80 w-80 rounded-full bg-violet-500/20 blur-3xl" />
 
-      <div className="section-container relative z-10 grid min-h-[900px] items-center gap-14 py-24 lg:grid-cols-[1.02fr_.98fr]">
+      <div className="section-container relative z-10 grid min-h-[880px] items-center gap-14 py-20 lg:grid-cols-[1.02fr_.98fr]">
         <div>
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.16em] text-cyan-200 backdrop-blur">
-            <Sparkles size={15} /> Huy Automation AI Experience Platform
+            <Sparkles size={15} /> HAIOS Runtime / AI Company OS
           </span>
-          <h1 className="mt-8 max-w-5xl text-5xl font-black leading-[1.02] tracking-[-0.055em] md:text-7xl">
-            Một AI Company đang hoạt động bên trong trình duyệt.
+          <h1 className="mt-8 max-w-5xl text-5xl font-black leading-[1.01] tracking-[-0.06em] md:text-7xl">
+            Sở hữu một đội ngũ AI Employees thay vì tuyển thêm người.
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
-            Hành trình build in public từ studio ảnh gia đình thành hệ thống Automation: 19 AI Employees, mỗi AI là một workflow có thể demo, triển khai và sở hữu.
+            Website này là showroom công nghệ của Huy Automation AI: Voice AI, CRM, dashboard, content, follow-up và task automation đang được đóng gói thành giải pháp triển khai cho doanh nghiệp thật.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a href="/#demo" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-black text-slate-950 shadow-soft hover:bg-cyan-100">
-              Xem hệ thống hoạt động <ArrowRight size={18} />
+              Xem demo BĐS <ArrowRight size={18} />
             </a>
             <a href="/employees/que-anh" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/10 px-7 py-4 font-black text-white backdrop-blur hover:bg-white/15">
               <PhoneCall size={18} /> Gọi Quế Anh
             </a>
-            <a href="/#employees" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 px-7 py-4 font-black text-white hover:bg-white/10">
-              <MessageCircle size={18} /> Gặp 19 AI
+            <a href="/#lead" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 px-7 py-4 font-black text-white hover:bg-white/10">
+              <MessageCircle size={18} /> Đặt lịch tư vấn
             </a>
           </div>
 
@@ -57,6 +57,17 @@ export function HeroFounder() {
                 <p className="mt-1 text-xs font-bold leading-5 text-slate-300">{label}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8 grid max-w-2xl gap-3 md:grid-cols-3">
+            {[
+              [Zap, 'Demo trước, bán sau'],
+              [ShieldCheck, 'Có quy trình quay lại'],
+              [Activity, 'Theo dõi được bằng dashboard'],
+            ].map(([Icon, text]) => {
+              const Cmp = Icon as typeof Zap;
+              return <div key={text as string} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-black text-slate-200"><Cmp size={17} className="text-cyan-300" />{text as string}</div>;
+            })}
           </div>
         </div>
 
@@ -74,13 +85,14 @@ export function HeroFounder() {
               </div>
 
               <div className="grid gap-3 md:grid-cols-2">
-                {runningJobs.map(([wf, text, tag]) => (
-                  <div key={wf} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+                {runningJobs.map(([wf, text, tag, status]) => (
+                  <div key={wf} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition hover:border-cyan-300/30 hover:bg-cyan-300/[0.07]">
                     <div className="flex items-center justify-between gap-3">
                       <p className="font-black text-cyan-200">{wf}</p>
                       <span className="rounded-full bg-white/10 px-2 py-1 text-[10px] font-bold text-slate-300">{tag}</span>
                     </div>
                     <p className="mt-3 text-sm font-semibold leading-6 text-slate-300">{text}</p>
+                    <p className="mt-3 text-[10px] font-black uppercase tracking-[.16em] text-emerald-300">● {status}</p>
                   </div>
                 ))}
               </div>
@@ -98,7 +110,7 @@ export function HeroFounder() {
             </div>
           </div>
           <div className="floaty absolute -bottom-7 -left-4 rounded-3xl border border-white/10 bg-white p-5 text-slate-950 shadow-soft">
-            <p className="text-xs font-black uppercase tracking-[.14em] text-slate-500">Featured Demo</p>
+            <p className="text-xs font-black uppercase tracking-[.14em] text-slate-500">Flagship Demo</p>
             <p className="mt-1 text-xl font-black">AI Sales BĐS</p>
             <p className="mt-2 flex items-center gap-2 text-sm font-bold text-emerald-600"><CheckCircle2 size={16}/> Voice → CRM → Task</p>
           </div>
