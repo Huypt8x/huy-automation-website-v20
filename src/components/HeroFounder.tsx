@@ -1,4 +1,17 @@
-import { ArrowRight, CheckCircle2, MessageCircle, PhoneCall, Sparkles, Activity, ShieldCheck, Zap } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import { Room, RoomEvent, Track, createLocalAudioTrack } from 'livekit-client';
+import {
+  ArrowRight,
+  CheckCircle2,
+  MessageCircle,
+  PhoneCall,
+  Sparkles,
+  Activity,
+  ShieldCheck,
+  Zap,
+} from 'lucide-react';
 
 const liveStats = [
   ['AI Employees', '19'],
@@ -19,6 +32,91 @@ const runningJobs = [
 const aiOnline = ['Quế Anh', 'Hà Anh', 'Vân Anh', 'Trâm Anh', 'Giang Anh', 'Phương Anh', 'Mai Anh', 'Hải Anh'];
 
 export function HeroFounder() {
+  const [status, setStatus] = useState('Gọi Quế Anh');
+  const [room, setRoom] = useState<Room | null>(null);
+
+  function cleanupRemoteAudio() {
+    document.querySelectorAll('[data-livekit-remote-audio="true"]').forEach((el) => el.remove());
+  }
+
+  async function startCall() {
+    try {
+      setStatus('Đang tạo phòng gọi...');
+
+      const now = Date.now();
+
+      const res = await fetch('https://automation.huypt.com/webhook/wf31/voice-entry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'website',
+          channel: 'voice',
+          source_id: 'ai.huypt.com',
+          caller_id: `WEB_${now}`,
+          lead_id: `WEB_LEAD_${now}`,
+          customer_name: 'Khách gọi từ website',
+          test_mode: false,
+        }),
+      });
+
+      if (!res.ok) throw new Error(`WF31 error: ${res.status}`);
+
+      const data = await res.json();
+
+      if (!data?.livekit_url || !data?.token) {
+        throw new Error('WF31 thiếu livekit_url hoặc token');
+      }
+
+      setStatus('Đang kết nối Quế Anh...');
+
+      const nextRoom = new Room();
+
+      nextRoom.on(RoomEvent.TrackSubscribed, (track) => {
+        if (track.kind === Track.Kind.Audio) {
+          const audioEl = track.attach();
+          audioEl.autoplay = true;
+          audioEl.setAttribute('data-livekit-remote-audio', 'true');
+          document.body.appendChild(audioEl);
+        }
+      });
+
+      nextRoom.on(RoomEvent.TrackUnsubscribed, (track) => {
+        track.detach().forEach((el) => el.remove());
+      });
+
+      nextRoom.on(RoomEvent.Disconnected, () => {
+        cleanupRemoteAudio();
+        setRoom(null);
+        setStatus('Gọi Quế Anh');
+      });
+
+      await nextRoom.connect(data.livekit_url, data.token);
+
+      const micTrack = await createLocalAudioTrack({
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: true,
+      });
+
+      await nextRoom.localParticipant.publishTrack(micTrack);
+
+      setRoom(nextRoom);
+      setStatus('Đang nói chuyện với Quế Anh');
+    } catch (error) {
+      console.error(error);
+      cleanupRemoteAudio();
+      setRoom(null);
+      setStatus('Lỗi kết nối, thử lại');
+    }
+  }
+
+  function endCall() {
+    room?.disconnect();
+    cleanupRemoteAudio();
+    setRoom(null);
+    setStatus('Gọi Quế Anh');
+  }
+
   return (
     <section id="top" className="relative isolate overflow-hidden bg-[#020617] text-white scroll-mt-24">
       <div className="absolute inset-0 grid-pattern opacity-60" />
@@ -31,20 +129,29 @@ export function HeroFounder() {
           <span className="inline-flex items-center gap-2 rounded-full border border-cyan-300/25 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.16em] text-cyan-200 backdrop-blur">
             <Sparkles size={15} /> V21 Production / AI Employee Sales Hub
           </span>
+
           <h1 className="mt-8 max-w-5xl text-5xl font-black leading-[1.01] tracking-[-0.06em] md:text-7xl">
             19 AI Employees làm việc 24/7 cho doanh nghiệp của bạn.
           </h1>
+
           <p className="mt-7 max-w-2xl text-xl leading-9 text-slate-300">
-            Doanh nghiệp có thể sở hữu đội ngũ AI làm việc 24/7: Quế Anh nghe máy và tư vấn, Vân Anh theo dõi dashboard, Hải Anh hỗ trợ vận hành. Mỗi AI tạo ra một kết quả rõ ràng cho bán hàng, chăm sóc khách hàng và quản trị.
+            Khách gọi đến được tiếp nhận ngay. Lead tự vào CRM. Dashboard cập nhật liên tục. Doanh nghiệp có thể bắt đầu từ một AI Employee, sau đó mở rộng khi thấy hiệu quả.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a href="/#demo" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-4 font-black text-slate-950 shadow-soft hover:bg-cyan-100">
               Xem Demo AI Sales BĐS <ArrowRight size={18} />
             </a>
-            <a href="/employees/que-anh" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/10 px-7 py-4 font-black text-white backdrop-blur hover:bg-white/15">
-              <PhoneCall size={18} /> Sở hữu Quế Anh
-            </a>
+
+            <button
+              type="button"
+              onClick={room ? endCall : startCall}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 bg-white/10 px-7 py-4 font-black text-white backdrop-blur hover:bg-white/15"
+            >
+              <PhoneCall size={18} />
+              {room ? 'Kết thúc cuộc gọi' : status}
+            </button>
+
             <a href="https://zalo.me/0838713123" className="inline-flex items-center justify-center gap-2 rounded-full border border-white/18 px-7 py-4 font-black text-white hover:bg-white/10">
               <MessageCircle size={18} /> Zalo 0838 713 123
             </a>
@@ -66,7 +173,12 @@ export function HeroFounder() {
               [Activity, 'Có dashboard quản trị'],
             ].map(([Icon, text]) => {
               const Cmp = Icon as typeof Zap;
-              return <div key={text as string} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-black text-slate-200"><Cmp size={17} className="text-cyan-300" />{text as string}</div>;
+              return (
+                <div key={text as string} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-black text-slate-200">
+                  <Cmp size={17} className="text-cyan-300" />
+                  {text as string}
+                </div>
+              );
             })}
           </div>
         </div>
@@ -76,6 +188,7 @@ export function HeroFounder() {
           <div className="glass-card relative overflow-hidden rounded-[40px] p-5">
             <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-slate-950 p-5">
               <div className="scan-line pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cyan-300/0 via-cyan-300/20 to-cyan-300/0" />
+
               <div className="mb-5 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-black uppercase tracking-[.18em] text-cyan-300">AI Employee Runtime</p>
@@ -102,17 +215,21 @@ export function HeroFounder() {
                 <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
                   {aiOnline.map((name) => (
                     <a key={name} href={`/employees/${toSlug(name)}`} className="rounded-2xl bg-white/[0.06] p-3 text-sm font-black text-white hover:bg-cyan-300/15">
-                      <span className="mr-2 text-emerald-300">●</span>{name}
+                      <span className="mr-2 text-emerald-300">●</span>
+                      {name}
                     </a>
                   ))}
                 </div>
               </div>
             </div>
           </div>
+
           <div className="floaty absolute -bottom-7 -left-4 rounded-3xl border border-white/10 bg-white p-5 text-slate-950 shadow-soft">
             <p className="text-xs font-black uppercase tracking-[.14em] text-slate-500">Demo quan trọng nhất</p>
             <p className="mt-1 text-xl font-black">AI Sales BĐS</p>
-            <p className="mt-2 flex items-center gap-2 text-sm font-bold text-emerald-600"><CheckCircle2 size={16}/> Khách gọi → Quế Anh → CRM</p>
+            <p className="mt-2 flex items-center gap-2 text-sm font-bold text-emerald-600">
+              <CheckCircle2 size={16} /> Khách gọi → Quế Anh → CRM
+            </p>
           </div>
         </div>
       </div>
