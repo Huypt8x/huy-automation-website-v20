@@ -1,0 +1,11 @@
+Đặt video demo tại đây:
+public/media/videos/ai-sales-machine-demo.mp4
+
+Gợi ý video 60-90 giây:
+1. Khách nhắn tin
+2. CRM nhận lead
+3. AI Memory ghi nhớ nhu cầu
+4. Pipeline cập nhật
+5. COO tạo task
+6. WF23 route Sales Manager
+7. WF24 Forecast báo cáo doanh thu
