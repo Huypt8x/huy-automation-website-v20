@@ -56,21 +56,27 @@ export function Header() {
           {links.map((link) => {
             const isActive = activeKey === link.key;
             return (
-              <a key={link.label} href={link.href} className={['relative rounded-full px-4 py-2 transition', isActive ? 'bg-blue-50 text-primary shadow-sm ring-1 ring-blue-100' : 'hover:bg-slate-50 hover:text-primary'].join(' ')}>
+              <a
+                key={link.label}
+                href={link.href}
+                className={[
+                  'relative rounded-full px-4 py-2 transition',
+                  isActive
+                    ? 'bg-blue-50 text-primary shadow-sm ring-1 ring-blue-100'
+                    : 'hover:bg-slate-50 hover:text-primary',
+                ].join(' ')}
+              >
                 {link.label}
                 {isActive && <span className="absolute -bottom-2 left-1/2 h-1 w-8 -translate-x-1/2 rounded-full bg-primary" />}
               </a>
             );
-          const raw = await res.json();
-console.log('WF31 RAW RESPONSE:', raw);
+          })}
+        </nav>
 
-const data = raw?.response || raw?.body || raw;
-
-if (!data?.livekit_url || !data?.token) {
-  throw new Error(
-    'WF31 thiếu livekit_url hoặc token: ' + JSON.stringify(raw)
-  );
-}
+        <a href="tel:0838713123" className="rounded-full bg-dark px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-primary">
+          0838 713 123
+        </a>
+      </div>
     </header>
   );
 }
