@@ -61,11 +61,16 @@ export function Header() {
                 {isActive && <span className="absolute -bottom-2 left-1/2 h-1 w-8 -translate-x-1/2 rounded-full bg-primary" />}
               </a>
             );
-          })}
-        </nav>
+          const raw = await res.json();
+console.log('WF31 RAW RESPONSE:', raw);
 
-        <a href="tel:0838713123" className="rounded-full bg-dark px-5 py-3 text-sm font-bold text-white shadow-soft hover:bg-primary">0838 713 123</a>
-      </div>
+const data = raw?.response || raw?.body || raw;
+
+if (!data?.livekit_url || !data?.token) {
+  throw new Error(
+    'WF31 thiếu livekit_url hoặc token: ' + JSON.stringify(raw)
+  );
+}
     </header>
   );
 }
